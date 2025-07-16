@@ -30,10 +30,13 @@ public class Main {
                 //transformer mon tableau en array list pour pouvoir utiliser contains
                 List<String> liste = Arrays.asList(feuDepart);
 
+                //verifier si la case est en feu
                 if (liste.contains(String.valueOf(num + 1))){
-                    System.out.println("case num " + x.getNumero());
+                    x.setEtat("feu");
+                } else {
+                    x.setEtat("arbre");
                 }
-
+                System.out.println("case num " + x.getNumero() + x.getEtat());
             }
         }
     }
