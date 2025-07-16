@@ -13,10 +13,10 @@ public class Main {
         int l = 4;
 
         //création d'un tableau
-        int[][] foret;
+        Case[][] foret;
 
         //taille du tableau aux dimensions de la grille (foret)
-        foret = new int[h][l];
+        foret = new Case[h][l];
 
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < l; j++) {
@@ -36,8 +36,11 @@ public class Main {
                 } else {
                     x.setEtat("arbre");
                 }
+
+                foret[i][j] = x;
                 System.out.println("case num " + x.getNumero() + x.getEtat());
             }
         }
+        System.out.println(foret[0][1].getEtat());
     }
 }
