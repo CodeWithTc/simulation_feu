@@ -5,7 +5,8 @@ public class Case {
 
     //constructeur sans parametres
     public Case(){
-
+        this.numero = numero;
+        this.etat = etat;
     }
 
     //constructeur avec parametres
