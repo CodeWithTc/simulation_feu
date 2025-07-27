@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.lang.Math;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,9 +13,9 @@ public class Main {
         feuDepart.add("20");
         //hauteur et largeur de la grille (foret)
         int h = 5;
-        int l = 4;
+        int l = 5;
         //probabilité p qu'une case soit en feu
-        double p = 2;
+        double p = 10;
 
         //création d'un tableau representant la foret
         Case[][] foret;
@@ -70,22 +71,26 @@ public class Main {
                         leur état
                         */
                         if (i > 0){
-                            if (foret[i-1][j].getEtat().equals("arbre")){
+                            int rand = (int)(Math.random()*p) + 1;
+                            if (foret[i-1][j].getEtat().equals("arbre") && rand == 1){
                                 foret[i-1][j].setEtat("feu");
                             }
                         }
                         if (i < h-1){
-                            if (foret[i+1][j].getEtat().equals("arbre")){
+                            int rand = (int)(Math.random()*p) + 1;
+                            if (foret[i+1][j].getEtat().equals("arbre") && rand == 1){
                                 foret[i+1][j].setEtat("feu");
                             }
                         }
                         if (j > 0){
-                            if (foret[i][j-1].getEtat().equals("arbre")){
+                            int rand = (int)(Math.random()*p) + 1;
+                            if (foret[i][j-1].getEtat().equals("arbre") && rand == 1){
                                 foret[i][j-1].setEtat("feu");
                             }
                         }
                         if (j < l-1){
-                            if (foret[i][j+1].getEtat().equals("arbre")){
+                            int rand = (int)(Math.random()*p) + 1;
+                            if (foret[i][j+1].getEtat().equals("arbre") && rand == 1){
                                 foret[i][j+1].setEtat("feu");
                             }
                         }
